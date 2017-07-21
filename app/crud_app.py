@@ -38,6 +38,11 @@ There are {0} products in the database. Please select an operation:
 chosen_operation = input(menu)
 chosen_operation = chosen_operation.title()
 
+other_path = "/Users/lily/Desktop/CRUD-Application/data/copy_products.csv"
+with open(other_path, "w") as csv_file:
+    writer = csv.DictWriter(csv_file, fieldnames=["id","name","aisle","department","price"])
+    writer.writeheader()
+
 
 # print(len(products))
 
