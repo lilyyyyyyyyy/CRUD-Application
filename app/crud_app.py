@@ -42,6 +42,9 @@ other_path = "/Users/lily/Desktop/CRUD-Application/data/copy_products.csv"
 with open(other_path, "w") as csv_file:
     writer = csv.DictWriter(csv_file, fieldnames=["id","name","aisle","department","price"])
     writer.writeheader()
+    for product in products:
+        writer.writerow(product)
+
 
 
 # print(len(products))
