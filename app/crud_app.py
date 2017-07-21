@@ -9,8 +9,12 @@ with open(csv_file_path, "r") as csv_file:
     for row in reader:
         products.append(row)
 
-for product in products:
-    print(product['name'])
+print(len(products))
+
+# for product in products:
+#     print(product['name'])
+#
+
 
 
 # menu = """
