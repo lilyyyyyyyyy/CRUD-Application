@@ -12,4 +12,18 @@ There are 20 products in the database. Please select an operation:
     'Update'  | Edit an existing product.
     'Destroy' | Delete an existing product.
  """
-print(menu)
+
+chosen_operation = input(menu)
+chosen_operation = chosen_operation.title()
+
+if chosen_operation == "List":
+    print("List")
+elif chosen_operation == "Show":
+    print("Show")
+elif chosen_operation == "Create":
+    print("Create")
+elif chosen_operation == "Update":
+    print("Update")
+elif chosen_operation == "Destroy":
+    print("Destroy")
+else: print("OOPS. PLEASE CHOOSE ONE OF THE RECOGNIZED OPERATIONS.")
