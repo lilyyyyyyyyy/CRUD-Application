@@ -68,7 +68,23 @@ def show_product():
         print("COULDN'T FIND A PRODUCT WITH IDENTIFIER", choose_a_product)
 
 def create_product():
-    print("Create")
+    print("OK. Please specify the product's information...")
+    product_name = input("name: ")
+    product_aisle = input("aisle: ")
+    product_department = input("department: ")
+    product_price = input("price: ")
+    new_product = {
+        "id": len(products) + 1,
+        "name": product_name,
+        "aisle": product_aisle,
+        "department": product_department,
+        "price": product_price
+    }
+    print("CREATING A PRODUCT HERE!")
+    print(new_product)
+    products.append(new_product)
+
+    
 def update_product():
     print("Update")
 def destroy_product():
