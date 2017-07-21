@@ -58,7 +58,15 @@ def list_product():
         print(" + ", dict(product))
 
 def show_product():
-    print("Show")
+    choose_a_product = input("OK. Please specify the product's identifier: ")
+    product = [p for p in products if p["id"] == choose_a_product]
+    if len(product)>0:
+        product = product[0]
+        print("SHOWING A PRODUCT HERE!")
+        print(dict(product))
+    else:
+        print("COULDN'T FIND A PRODUCT WITH IDENTIFIER", choose_a_product)
+
 def create_product():
     print("Create")
 def update_product():
