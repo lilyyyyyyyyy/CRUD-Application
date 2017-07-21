@@ -99,9 +99,17 @@ def update_product():
         print(dict(product))
     else:
         print("COULDN'T FIND A PRODUCT WITH IDENTIFIER", choose_a_product)
-        
+
 def destroy_product():
-    print("Destroy")
+    print("DESTROYING A PRODUCT")
+    choose_a_product = input("OK. Please specify the product's identifier: ")
+    product = [p for p in products if p["id"] == choose_a_product][0]
+    if product:
+        print("DESTROYING PRODUCT HERE!")
+        print(dict(product))
+        del products[products.index(product)]
+    else:
+        print("COULDN'T FIND A PRODUCT WITH IDENTIFIER", choose_a_product)
 
 
 if chosen_operation == "List": list_product()
