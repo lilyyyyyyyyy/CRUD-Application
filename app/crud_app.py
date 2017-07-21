@@ -9,31 +9,43 @@ with open(csv_file_path, "r") as csv_file:
     for row in reader:
         products.append(row)
 
-print(len(products))
+import csv
+
+products = []
+
+csv_file_path = "/Users/lily/Desktop/CRUD-Application/data/products.csv"
+
+with open(csv_file_path, "r") as csv_file:
+    reader = csv.DictReader(csv_file)
+    for row in reader:
+        products.append(row)
+
+menu = """
+-----------------------------------
+PRODUCTS APPLICATION
+-----------------------------------
+Welcome @lilyyyyyyyyy!
+There are {0} products in the database. Please select an operation:
+    operation | description
+    --------- |------------------
+    'List'    | Display a list of product identifiers and names.
+    'Show'    | Show information about a product.
+    'Create'  | Add a new product.
+    'Update'  | Edit an existing product.
+    'Destroy' | Delete an existing product.
+ """.format(len(products))
+
+chosen_operation = input(menu)
+chosen_operation = chosen_operation.title()
+
+
+# print(len(products))
 
 # for product in products:
 #     print(product['name'])
 #
 
 
-
-# menu = """
-# -----------------------------------
-# PRODUCTS APPLICATION
-# -----------------------------------
-# Welcome @lilyyyyyyyyy!
-# There are 20 products in the database. Please select an operation:
-#     operation | description
-#     --------- |------------------
-#     'List'    | Display a list of product identifiers and names.
-#     'Show'    | Show information about a product.
-#     'Create'  | Add a new product.
-#     'Update'  | Edit an existing product.
-#     'Destroy' | Delete an existing product.
-#  """
-#
-# chosen_operation = input(menu)
-# chosen_operation = chosen_operation.title()
 #
 # def list_product():
 #     print("List")
