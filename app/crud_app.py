@@ -16,14 +16,26 @@ There are 20 products in the database. Please select an operation:
 chosen_operation = input(menu)
 chosen_operation = chosen_operation.title()
 
-if chosen_operation == "List":
+def list_product():
     print("List")
-elif chosen_operation == "Show":
+def show_product():
     print("Show")
-elif chosen_operation == "Create":
+def create_product():
     print("Create")
-elif chosen_operation == "Update":
+def update_product():
     print("Update")
-elif chosen_operation == "Destroy":
+def destroy_product():
     print("Destroy")
+
+
+if chosen_operation == "List":
+    list_product()
+elif chosen_operation == "Show":
+    show_product()
+elif chosen_operation == "Create":
+    create_product()
+elif chosen_operation == "Update":
+    update_product()
+elif chosen_operation == "Destroy":
+    destroy_product()
 else: print("OOPS. PLEASE CHOOSE ONE OF THE RECOGNIZED OPERATIONS.")
