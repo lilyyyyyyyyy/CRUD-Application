@@ -84,9 +84,22 @@ def create_product():
     print(new_product)
     products.append(new_product)
 
-    
+
 def update_product():
-    print("Update")
+    choose_a_product = input("OK. Please specify the product's identifier: ")
+    product = [p for p in products if p["id"] == choose_a_product]
+    if len(product)>0:
+        product = product[0]
+        print("OK. Please specify the product's information..." )
+        product['name'] = input("Change name from {0} to: " .format(product['name']))
+        product['aisle'] = input("Change aisle from {0} to: " .format(product['aisle']))
+        product['department'] = input("Change department from {0} to: " .format(product['department']))
+        product['price'] = input("Change price from {0} to: " .format(product['price']))
+        print("UPDATING A PRODUCT HERE!")
+        print(dict(product))
+    else:
+        print("COULDN'T FIND A PRODUCT WITH IDENTIFIER", choose_a_product)
+        
 def destroy_product():
     print("Destroy")
 
