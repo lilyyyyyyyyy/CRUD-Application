@@ -7,7 +7,7 @@ Download the source code:
 
 ```shell
 git clone git@github.com:lilyyyyyyyyy/CRUD-Application.git
-cd some/path/to/repo/
+cd CRUD-Application
 ```
 
 Finally, download the [example `products.csv` file](https://raw.githubusercontent.com/prof-rossetti/nyu-info-2335-70-201706/master/projects/crud-app/products.csv) and save it as `data/products.csv`.
@@ -15,5 +15,5 @@ Finally, download the [example `products.csv` file](https://raw.githubuserconten
 ## Usage
 
 ```shell
-python app/products_app.py
+python app/crud_app.py
 ```
