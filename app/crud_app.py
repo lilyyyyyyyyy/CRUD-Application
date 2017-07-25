@@ -1,3 +1,9 @@
+def enlarge(i):
+    return i * 100
+
+
+
+
 import csv
 
 products = []
@@ -9,16 +15,12 @@ with open(csv_file_path, "r") as csv_file:
     for row in reader:
         products.append(row)
 
-import csv
-
-products = []
-
-csv_file_path = "/Users/lily/Desktop/CRUD-Application/data/products.csv"
-
-with open(csv_file_path, "r") as csv_file:
-    reader = csv.DictReader(csv_file)
-    for row in reader:
-        products.append(row)
+def map_id(product): return int(product["id"])
+def auto_increment_id(products):
+    product_ids = list(map(map_id, products))
+    if len(product_ids) == 0: next_id = 1
+    else: next_id = max(product_ids) + 1
+    return next_id
 
 
 menu = """
@@ -74,7 +76,7 @@ def create_product():
     product_department = input("department: ")
     product_price = input("price: ")
     new_product = {
-        "id": len(products) + 1,
+        "id": auto_increment_id(products),
         "name": product_name,
         "aisle": product_aisle,
         "department": product_department,
@@ -101,7 +103,6 @@ def update_product():
         print("COULDN'T FIND A PRODUCT WITH IDENTIFIER", choose_a_product)
 
 def destroy_product():
-    print("DESTROYING A PRODUCT")
     choose_a_product = input("OK. Please specify the product's identifier: ")
     product = [p for p in products if p["id"] == choose_a_product][0]
     if product:
